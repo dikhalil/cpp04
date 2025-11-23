@@ -6,7 +6,7 @@
 /*   By: dikhalil <dikhalil@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:37:05 by dikhalil          #+#    #+#             */
-/*   Updated: 2025/10/30 23:14:45 by dikhalil         ###   ########.fr       */
+/*   Updated: 2025/10/30 23:24:51 by dikhalil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 int main(void)
 {
+    // Anima a;
     const Animal* j = new Dog();
     const Animal* i = new Cat();
     const Animal *animals[4] = 

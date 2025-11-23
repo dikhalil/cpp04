@@ -1,10 +1,10 @@
 # Compiler and flags
-NAME = Animal
+NAME = AMateria
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Source files
-SRCS = Animal.cpp Brain.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp main.cpp
+SRCS = main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 # Default target

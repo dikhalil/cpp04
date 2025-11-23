@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dikhalil <dikhalil@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 17:37:00 by dikhalil          #+#    #+#             */
-/*   Updated: 2025/10/30 23:12:48 by dikhalil         ###   ########.fr       */
+/*   Created: 2025/10/30 17:36:53 by dikhalil          #+#    #+#             */
+/*   Updated: 2025/10/30 23:27:26 by dikhalil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog(void) : Animal("Dog")
+Cat::Cat(void) : Animal("Cat")
 {
     _brain = new Brain();
-    std::cout << "Dog created!" << std::endl;
+    std::cout << "Cat created!" << std::endl;
 }
 
-Dog::Dog(const Dog &other) : Animal(other)
+Cat::Cat(const Cat &other) : Animal(other)
 {
-    std::cout << "Dog copy constructor called" << std::endl;
+    std::cout << "Cat copy constructor called" << std::endl;
     *this = other;
 }
-
-Dog &Dog::operator=(const Dog &other)
+Cat &Cat::operator=(const Cat &other)
 {
-    std::cout << "Dog copy assignment called" << std::endl;
+    std::cout << "Cat copy assignment called" << std::endl;
     if (this != &other)
     {
         Animal::operator=(other);
@@ -35,14 +34,12 @@ Dog &Dog::operator=(const Dog &other)
     }
     return (*this);
 }
-
-Dog::~Dog(void)
+Cat::~Cat(void)
 {
     delete (_brain);
-    std::cout << "Dog destroyed!" << std::endl;
+    std::cout << "Cat destroyed!" << std::endl;
 }
-
-void Dog::makeSound() const
+void Cat::makeSound() const
 {
-    std::cout << "Woof!" << std::endl;
+    std::cout << "Meow :3!" << std::endl;
 }

@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dikhalil <dikhalil@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 17:36:50 by dikhalil          #+#    #+#             */
-/*   Updated: 2025/10/30 22:55:00 by dikhalil         ###   ########.fr       */
+/*   Created: 2025/10/31 01:13:03 by dikhalil          #+#    #+#             */
+/*   Updated: 2025/10/31 16:00:21 by dikhalil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "IMateriaSource.hpp"
 
-class Cat : public Animal
+class MateriaSource : public IMateriaSource
 {
     private:
-        Brain *_brain;
+        AMateria* _materias[4];
     public:
-        Cat(void);
-        Cat(const Cat &other);
-        Cat &operator=(const Cat &other);
-        ~Cat(void);
-        void makeSound() const;
+        MateriaSource(void);
+        MateriaSource(const MateriaSource &other);
+        MateriaSource &operator=(const MateriaSource &other);
+        ~MateriaSource(void);
+        void learnMateria(AMateria* m);
+        AMateria* createMateria(std::string const & type);
 };
 
 #endif
