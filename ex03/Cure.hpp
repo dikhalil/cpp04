@@ -6,7 +6,7 @@
 /*   By: dikhalil <dikhalil@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 23:52:28 by dikhalil          #+#    #+#             */
-/*   Updated: 2025/10/31 00:39:32 by dikhalil         ###   ########.fr       */
+/*   Updated: 2025/11/24 15:53:43 by dikhalil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Cure : public AMateria
         Cure(void);
         Cure(const Cure &other);
         Cure &operator=(const Cure &other);
-        virtual ~Cure(void);
+        ~Cure(void);
         AMateria* clone() const;
         void use(ICharacter& target);
 };

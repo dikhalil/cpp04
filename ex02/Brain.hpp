@@ -6,7 +6,7 @@
 /*   By: dikhalil <dikhalil@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:44:20 by dikhalil          #+#    #+#             */
-/*   Updated: 2025/10/30 22:46:29 by dikhalil         ###   ########.fr       */
+/*   Updated: 2025/11/24 15:40:18 by dikhalil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #ifndef BRAIN_HPP
 #define BRAIN_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 class Brain
 {

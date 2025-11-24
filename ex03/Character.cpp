@@ -6,7 +6,7 @@
 /*   By: dikhalil <dikhalil@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 00:02:57 by dikhalil          #+#    #+#             */
-/*   Updated: 2025/10/31 16:07:18 by dikhalil         ###   ########.fr       */
+/*   Updated: 2025/11/24 16:41:00 by dikhalil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ Character::Character(std::string const &name) : _name(name)
 Character::Character(const Character &other)
 {
     // std::cout << "Character copy constructor called" << std::endl;
+    for (int i = 0; i < 4; i++)
+        _inventory[i] = NULL;
     *this = other;
 }
 
@@ -36,7 +38,13 @@ Character &Character::operator=(const Character &other)
         for (int i = 0; i < 4; i++)
         {
             if (_inventory[i])
+            {
                 delete (_inventory[i]);
+                _inventory[i] = NULL;
+            }
+        }
+        for (int i = 0; i < 4; i++)
+        {
             if (other._inventory[i])
                 _inventory[i] = other._inventory[i]->clone();
             else
@@ -51,7 +59,10 @@ Character::~Character(void)
     for (int i = 0; i < 4; i++)
     {
         if (_inventory[i])
+        {
             delete (_inventory[i]);
+            _inventory[i] = NULL;
+        }
     }
     // std::cout << "Character " << _name << " destroyed!" << std::endl;
 }

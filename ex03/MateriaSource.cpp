@@ -6,7 +6,7 @@
 /*   By: dikhalil <dikhalil@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 01:12:58 by dikhalil          #+#    #+#             */
-/*   Updated: 2025/10/31 16:00:13 by dikhalil         ###   ########.fr       */
+/*   Updated: 2025/11/24 16:49:12 by dikhalil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ MateriaSource::MateriaSource(void)
 MateriaSource::MateriaSource(const MateriaSource &other)
 {
     // std::cout << "MateriaSource copy constructor called" << std::endl;
+    for (int i = 0; i < 4; i++)
+        _materias[i] = NULL;
     *this = other;
 }
 
@@ -33,6 +35,9 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
         {
             if (_materias[i])
                 delete (_materias[i]);
+        }
+        for (int i = 0; i < 4; i++)
+        {
             if (other._materias[i])
                 _materias[i] = other._materias[i]->clone();
             else

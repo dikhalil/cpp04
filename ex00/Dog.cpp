@@ -6,7 +6,7 @@
 /*   By: dikhalil <dikhalil@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:37:00 by dikhalil          #+#    #+#             */
-/*   Updated: 2025/10/30 18:24:46 by dikhalil         ###   ########.fr       */
+/*   Updated: 2025/11/24 15:03:33 by dikhalil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Dog::Dog(void) : Animal("Dog")
 {
-    std::cout << "Dog created!" << std::endl;
+    std::cout << "Dog Default constructor called!" << std::endl;
 }
 
 Dog::Dog(const Dog &other) : Animal(other)
@@ -31,10 +31,10 @@ Dog &Dog::operator=(const Dog &other)
 
 Dog::~Dog(void)
 {
-    std::cout << "Dog destroyed!" << std::endl;
+    std::cout << "Dog Destructor called!" << std::endl;
 }
 
 void Dog::makeSound() const
 {
-    std::cout << "Woof!" << std::endl;
+    std::cout << "Woof" << std::endl;
 }

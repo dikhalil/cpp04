@@ -6,7 +6,7 @@
 /*   By: dikhalil <dikhalil@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:43:58 by dikhalil          #+#    #+#             */
-/*   Updated: 2025/10/30 23:01:02 by dikhalil         ###   ########.fr       */
+/*   Updated: 2025/11/24 15:35:20 by dikhalil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 Brain::Brain(void)
 {
     for (int i = 0; i < 100; i++)
-        ideas[i] = "defualt";
-    std::cout << "Brain created!" << std::endl;
+        ideas[i] = "default";
+    std::cout << "Brain default constructor called!" << std::endl;
 }
 Brain::Brain(const Brain &other)
 {
@@ -35,5 +35,5 @@ Brain &Brain::operator=(const Brain &other)
 }
 Brain::~Brain(void)
 {
-    std::cout << "Brain destroyed!" << std::endl;
+    std::cout << "Brain destructor called!" << std::endl;
 }

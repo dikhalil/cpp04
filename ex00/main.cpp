@@ -6,7 +6,7 @@
 /*   By: dikhalil <dikhalil@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:37:05 by dikhalil          #+#    #+#             */
-/*   Updated: 2025/10/30 19:11:29 by dikhalil         ###   ########.fr       */
+/*   Updated: 2025/11/24 15:09:25 by dikhalil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,35 +16,39 @@
 
 int main(void)
 {
+    std::cout << "\n=== Basic Polymorphism ===\n";
     const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    const Animal *animals[2] = 
-    {
-        new Cat(),
-        new Dog()
-    };
-    const WrongAnimal* wrongCat = new WrongCat();
-
-    std::cout << j->getType() << " " << std::endl;
-    j->makeSound(); 
-    std::cout << i->getType() << " " << std::endl;    
-    i->makeSound();
-    for (int i = 0; i < 2; i++)
-    {
-        std::cout << animals[i]->getType() << std::endl;
-        animals[i]->makeSound();
-    } 
+    const Animal* dog = new Dog();
+    const Animal* cat = new Cat();
+    
+    std::cout << dog->getType() << " says: ";
+    dog->makeSound();
+    std::cout << cat->getType() << " says: ";
+    cat->makeSound();
+    std::cout << "Animal says: ";
     meta->makeSound();
-    std::cout << wrongCat->getType() << std::endl;
-    wrongCat->makeSound();
-    delete(i);
-    delete(j);
-    delete (meta);
 
-    for (int i = 0; i < 2; i++)
-        delete (animals[i]);
-    delete (wrongCat);
+    std::cout << "\n=== Array of Animals ===\n";
+    const Animal *animals[4] = {new Dog(), new Cat(), new Dog(), new Cat()};
+    for (int i = 0; i < 4; i++)
+    {
+        std::cout << animals[i]->getType() << " says: ";
+        animals[i]->makeSound();
+    }
+
+    std::cout << "\n=== Wrong Animal (No Virtual) ===\n";
+    const WrongAnimal* wrongCat = new WrongCat();
+    std::cout << wrongCat->getType() << " says: ";
+    wrongCat->makeSound();
+
+    std::cout << "\n=== Cleanup ===\n";
+    delete meta;
+    delete dog;
+    delete cat;
+    for (int i = 0; i < 4; i++)
+        delete animals[i];
+    delete wrongCat;
+
     return (0);
 }
 

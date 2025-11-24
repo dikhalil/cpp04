@@ -6,7 +6,7 @@
 /*   By: dikhalil <dikhalil@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:36:53 by dikhalil          #+#    #+#             */
-/*   Updated: 2025/10/30 18:23:28 by dikhalil         ###   ########.fr       */
+/*   Updated: 2025/11/24 15:01:11 by dikhalil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cat::Cat(void) : Animal("Cat")
 {
-    std::cout << "Cat created!" << std::endl;
+    std::cout << "Cat Default constructor called!" << std::endl;
 }
 
 Cat::Cat(const Cat &other) : Animal(other)
@@ -29,9 +29,10 @@ Cat &Cat::operator=(const Cat &other)
 }
 Cat::~Cat(void)
 {
-    std::cout << "Cat destroyed!" << std::endl;
+    std::cout << "Cat Destructor called!" << std::endl;
 }
+
 void Cat::makeSound() const
 {
-    std::cout << "Meow :3!" << std::endl;
+    std::cout << "Meow" << std::endl;
 }
