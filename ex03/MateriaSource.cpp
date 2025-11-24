@@ -6,7 +6,7 @@
 /*   By: dikhalil <dikhalil@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 01:12:58 by dikhalil          #+#    #+#             */
-/*   Updated: 2025/11/24 16:49:12 by dikhalil         ###   ########.fr       */
+/*   Updated: 2025/11/24 17:19:28 by dikhalil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void MateriaSource::learnMateria(AMateria* m)
             break;
         }
     }
-    delete (m);
+    delete m;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
