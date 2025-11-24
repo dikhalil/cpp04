@@ -6,7 +6,7 @@
 /*   By: dikhalil <dikhalil@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 00:02:57 by dikhalil          #+#    #+#             */
-/*   Updated: 2025/11/24 16:41:00 by dikhalil         ###   ########.fr       */
+/*   Updated: 2025/11/24 16:55:19 by dikhalil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@ Character::Character(const Character &other)
     // std::cout << "Character copy constructor called" << std::endl;
     for (int i = 0; i < 4; i++)
         _inventory[i] = NULL;
-    *this = other;
+    for (int i = 0; i < 4; i++)
+    {
+        if (other._inventory[i])
+            _inventory[i] = other._inventory[i]->clone();
+    }
 }
 
 Character &Character::operator=(const Character &other)
@@ -47,8 +51,6 @@ Character &Character::operator=(const Character &other)
         {
             if (other._inventory[i])
                 _inventory[i] = other._inventory[i]->clone();
-            else
-                _inventory[i] = NULL;
         }
     }
     return (*this);
